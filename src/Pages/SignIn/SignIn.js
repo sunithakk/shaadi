@@ -66,10 +66,11 @@ const validationSchema = Yup.object({
         .required("Enter your username")
         .min(2, "user name should contain at least 2 character"),
 
-    password: Yup.string()
-        .matches(/(123)/)
-        .min(3, "Password must contain at least 3 characters")
-        .required("Enter your password")
+    password: Yup.number()
+      
+        .required("No password provided.")
+        .min(123, "Password is too short - should be 3 chars minimum.")
+        .max(123)
 });
 
 class SignIn extends React.Component {
