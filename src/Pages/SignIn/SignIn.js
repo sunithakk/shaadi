@@ -5,6 +5,7 @@ import { Typography } from "@material-ui/core";
 import Form from "./Login";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import TextField from "@material-ui/core/TextField";
 
 const styles = theme => ({
     paper1: {
@@ -60,14 +61,15 @@ const styles = theme => ({
         }
     }
 });
+
 const validationSchema = Yup.object({
     username: Yup.string()
-        .matches(/(shaadi)/)
+        .matches(/(sunithahegde)/)
         .required("Enter your username")
         .min(2, "user name should contain at least 2 character"),
 
     password: Yup.number()
-      
+
         .required("No password provided.")
         .min(123, "Password is too short - should be 3 chars minimum.")
         .max(123)
